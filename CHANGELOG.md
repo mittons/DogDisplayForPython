@@ -11,3 +11,15 @@
 - **Testing Framework**: 
   - Wrote tests for the server, including the service and routes.
   - Implemented end-to-end tests that combine `routes.py` and `service.py`, mock the HTTP client, and verify the route responses.
+- **Project documentation**: README.md as an entry point for the project.
+- **License handling**: LICENSE file for the project, as well as THIRD_PARTY_LICENSES for crediting third party dependencies (some dependencies not part of version control, but linked/referenced as dependencies).
+- **Versioning:** This CHANGELOG.md added for documenting version control.
+
+## [0.1.1] - 2024-01-14
+
+### Added
+
+- **Fix changelog:** Added a few missing items from the v0.1.0 version.
+- **Licensing:** Added notes to comments in the main .gitignore file, comments that reference specific external repositories. Made a note of the licenses those repositories are published under.
+
+*Current version of the ChangeLog is powered by OpenAI, ChatGPT-4*
