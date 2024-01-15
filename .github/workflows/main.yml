@@ -3,7 +3,7 @@ name: PythonDogDisplay Initial CI/CD
 on:
   push:
     branches:
-      -master
+      - master
 
 jobs:
   test-version-refs:
@@ -19,4 +19,4 @@ jobs:
           python-version: '3.12'
 
       - name: Test for Integrity of Version References
-        uses: python version_ref_consistency_tests.py
+        run: python version_ref_consistency_tests.py
