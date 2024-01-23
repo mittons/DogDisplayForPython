@@ -1,4 +1,4 @@
-name: PythonDogDisplay Initial CI/CD
+name: DogDisplayForPython Initial CI/CD
 
 on:
   push:
