@@ -1,6 +1,6 @@
-# PythonDogDisplay
+# DogDisplayForPython
 
-### **Welcome to the PythonDogDisplay Repository!**
+### **Welcome to the DogDisplayForPython Repository!**
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -17,7 +17,7 @@
 **Technology: Python, HTML, CSS, Javascript**
 
 **Overview:**
-This project, PythonDogDisplay, is a web-based application mainly developed as a Python web server application. It's part of a series of implementations that showcase the same core functionality across different programming languages and frameworks. The primary objective of this project is to demonstrate my ability to adapt and replicate a consistent user experience and functionality in various technological environments.
+This project, DogDisplayForPython, is a web-based application mainly developed as a Python web server application. It's part of a series of implementations that showcase the same core functionality across different programming languages and frameworks. The primary objective of this project is to demonstrate my ability to adapt and replicate a consistent user experience and functionality in various technological environments.
 
 **Functionality:**
 At its heart, the application presents a simple, intuitive interface consisting of a header with a title and a centrally-located button. Upon user interaction with the button, the application initiates a state transition, displaying a loading spinner while processing an HTTP request. The outcomes are twofold:
@@ -39,8 +39,8 @@ This project is part of a larger journey, where I replicate a base application c
 Instructions for installing your project. Include steps for cloning the repo and any configuration necessary.
 
 ```bash
-git clone https://github.com/mittons/PythonDogDisplay.git
-cd PythonDogDisplay
+git clone https://github.com/mittons/DogDisplayForPython.git
+cd DogDisplayForPython
 pip install -e .
 pip install -r requirements.txt
 ```
@@ -69,11 +69,11 @@ To test the code run the following action while in the root directory:
 python run_server_tests.py
 ```
 ## Versioning
-We use [Semantic Versioning](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mittons/PythonDogDisplay/tags). 
+We use [Semantic Versioning](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mittons/DogDisplayForPython/tags). 
 
 ### Roadmap
 
-Current Version: v0.1.5
+Current Version: v0.1.6
 
 As the application evolves, the following key developments are planned:
 

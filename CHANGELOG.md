@@ -35,9 +35,18 @@
 ## [0.1.4] - 2024-01-15
 
 - **Added acknowledgements sections to README.md:** To ensure contributions are acknowledgeded.
-c
+
 ## [0.1.5] - 2024-01-18
 - **Updated CI/CD script** With changes tested in isolated environment at the GitHub repository [TestMergeBranches](https://github.com/mittons/TestMergeBranches). The additions of, and changes to, the automated scripts that react to git push commands two days ago were a bit chaotic and not tested in an isolated environment, however the current changes should perform better, at the very least get a quick resolution if something goes wrong.
 - **Fixed link error in README:** Removed additional parenthesis from README.md that was preventing correct hyperlink generation.
+
+
+## [0.1.6] - 2024-01-23
+
+- **Updated Flask Init Args in main.py:** Debug mode is off, the server is hardcoded to run listen on localhost (for now), on port 5678.
+
+- **Changed name of project:** from ~~PythonDogDisplay~~ to DogDisplayForPython. Safer for potential licensing issues. Places the focus on the functionaly developed in this source code. Shows that the project functions in conjuction with the language, while maintaining distinctiveness as an independent project.
+
+- **Prepare for Showcase and Build from Source Instructions:** Added a script or two, that will at least for a while, be a used as part of showcasing and testing the project in the next few updates.
 
 *Current version of the ChangeLog is powered by OpenAI, ChatGPT-4*
