@@ -1,0 +1,89 @@
+name: Build and Showcase for Ubuntu - Python
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: 1. Preparing the Project - Checkout Code
+      uses: actions/checkout@v4
+      with:
+        repository: 'mittons/DogDisplayForPython'
+        path: 'DogDisplayForPython' # Directory to clone the second repo into
+      
+    - name: 2. Setup Dependencies - Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: 3. Configure Environment
+      run: |
+        echo "Configure Environment"
+
+        cd DogDisplayForPython
+
+        pip install -r requirements.txt
+        pip install -e .
+
+      shell: bash
+
+    - name: 4. Server-Side Tests
+      run: |
+        echo "Running Tests"
+
+        cd DogDisplayForPython
+
+        python run_server_tests.py
+      shell: bash
+
+    - name: 5. Execute Showcase Run of Server
+      run: |
+        echo "Running the Application"
+                
+        cd DogDisplayForPython
+        
+        mv showcase_scripts/test_server_endpoints.py .
+        
+        set FLASK_ENV=production
+
+        python3 main.py > test_run_output.log 2>&1 &
+        sleep 5
+      
+        python3 test_server_endpoints.py
+      env:
+        FLASK_ENV: production
+
+    - name: 6. Display Server Logs from Showcase Run
+      run: |
+        echo "##############=="
+        echo "#  SERVER LOG   "
+        echo "######=========="
+        echo " "
+        
+        cd DogDisplayForPython
+        
+        cat test_run_output.log
+
+
+    - name: 7. Display Server Response Logs from Showcase Run (Caution - LARGE Log File)
+      run: |
+        echo "#############=="
+        echo "#  RESPONSE    "
+        echo "######========="
+        echo " "
+
+        
+        cd DogDisplayForPython
+
+        cat server_response_data_out.txt
+
+      shell: bash
+      # env:
+      #   PEM_KEY: ${{ secrets.PEM_KEY }}

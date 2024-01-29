@@ -5,8 +5,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Running the Tests](#running-the-tests)
+- [Showcase](#showcase)
 - [Versioning](#versioning)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -36,46 +35,21 @@ The primary purpose of this project is to:
 This project is part of a larger journey, where I replicate a base application concept in various languages, each serving as a testament to my growing skills and understanding of different tech stacks. It's designed not just as a technical demonstration, but also as a narrative of my learning process and commitment to continuous skill enhancement in the realm of software development.
 
 ## Installation
-Instructions for installing your project. Include steps for cloning the repo and any configuration necessary.
+For detailed instructions on setting up the environment, testing and running the application from source, refer to [BUILD.md](BUILD.md).
 
-```bash
-git clone https://github.com/mittons/DogDisplayForPython.git
-cd DogDisplayForPython
-pip install -e .
-pip install -r requirements.txt
-```
+## Showcase
+For a complete guide on setting up and showcasing the application, see [SHOWCASE_BUILD.md](SHOWCASE_BUILD.md).
 
-## Usage
-To run the application, use the following command based on your operating system:
-
-- **For Linux/MacOS:**
-  ```bash
-  env FLASK_ENV=production python main.py
-  ```
-  This command sets `FLASK_ENV` to `production` temporarily and runs `main.py`.
-
-- **For Windows:**
-  ```cmd
-  cmd /V /C "set FLASK_ENV=production && python main.py && set FLASK_ENV="
-  ```
-  This Windows command temporarily sets `FLASK_ENV` to `production`, executes `main.py`, and then resets `FLASK_ENV`.
-
-By default, the application is configured to fetch data from a production server when `FLASK_ENV` is set to `production`. If `FLASK_ENV` is not set, the application attempts to connect to a local server.
-
-## Running the Tests
-To test the code run the following action while in the root directory:
-
-```bash
-python run_server_tests.py
-```
 ## Versioning
 We use [Semantic Versioning](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mittons/DogDisplayForPython/tags). 
 
 ### Roadmap
 
-Current Version: v0.1.6
+Current Version: v0.2.0
 
 As the application evolves, the following key developments are planned:
+
+- [X] **Installation/Usage/Testing sections for this README.md (Complete):** Include sections on setup requirements, usage instructions for running, and testing.
 
 - [ ] **Testing Integration in CI/CD (Upcoming):** Implementation of automated testing on every code push. This will ensure code quality and stability by running a series of tests through a continuous integration/continuous deployment (CI/CD) pipeline.
 
