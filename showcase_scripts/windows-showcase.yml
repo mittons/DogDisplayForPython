@@ -1,0 +1,87 @@
+name: Build and Showcase for Windows - Python
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: 1. Preparing the Project
+      uses: actions/checkout@v4
+      with:
+        repository: 'mittons/DogDisplayForPython'
+        path: 'DogDisplayForPython' # Directory to clone the second repo into
+      
+    - name: 2. Setup Dependencies - Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: 3. Configure Environment
+      run: |
+        Write-Host "Configuring Dependencies"
+
+        Set-Location DogDisplayForPython
+
+        pip install -r requirements.txt
+        pip install -e .
+      shell: pwsh
+
+    - name: 4. Server-Side Tests
+      run: |
+        Write-Host "Running Tests"
+
+        # Commands to run the built executable
+        Set-Location DogDisplayForPython
+
+        python run_server_tests.py
+      shell: pwsh
+
+    - name: 5. Execute Showcase Run of Server
+      run: |
+        Write-Host "Running the Application"
+        
+        Set-Location DogDisplayForPython
+        
+        Move-Item ./showcase_scripts/test_server_endpoints.py ./
+
+        $env:FLASK_ENV = 'production'
+
+        Start-Process python -ArgumentList "main.py" -RedirectStandardError test_run_output.log -NoNewWindow
+        Start-Sleep -Seconds 5
+      
+        python3 test_server_endpoints.py
+      env:
+        FLASK_ENV: production
+        # PEM_KEY: ${{ secrets.PEM_KEY }}
+      shell: pwsh
+
+    - name: 6. Display Server Logs from Showcase Run
+      run: |
+        Write-Host "##############=="
+        Write-Host "#  SERVER LOG   "
+        Write-Host "######=========="
+        Write-Host " "
+        
+        Set-Location DogDisplayForPython
+        
+        Get-Content test_run_output.log
+      shell: pwsh
+
+    - name: 7. Display Server Response Logs from Showcase Run (Caution - LARGE Log File)
+      run: |
+        Write-Host "#############=="
+        Write-Host "#  RESPONSE    "
+        Write-Host "######========="
+        Write-Host " "
+
+        Set-Location DogDisplayForPython
+
+        Get-Content server_response_data_out.txt
+      shell: pwsh
