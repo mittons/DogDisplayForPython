@@ -70,4 +70,11 @@
 - **Diversity Among the Current Batch of Apps:** I decided to give the current group of apps some diversity, to separate them and give each of them something unique and wonderful. Currently they all have the title "Doggo Diversity Galore! 🐶". I will change the C++ app to "Doggo Diversity Extravanaza! 🐶" and the PHP app to "Doggo Diversity Abundance! 🐶", while keeping the Python app the same. (Python app is still getting this changelog message!). Diversity is neither a patch nor a feature. It is an inherent part of the world and should be celebrated as such.
 
 
+## [0.2.2] - 2024-04-05
+
+### Added
+
+- **Changed default port settings to based on FLASK_ENV variable:** Now runs on port 5678 by default if FLASK_ENV var is not set to 'production', but if FLASK_ENV is set to 'production' it will run on 5679.  
+
+
 *Current version of the ChangeLog is powered by OpenAI, ChatGPT-4*
