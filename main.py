@@ -1,3 +1,4 @@
+import os
 from dog_app import create_app
 
 app = create_app()
