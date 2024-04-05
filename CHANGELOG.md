@@ -76,5 +76,12 @@
 
 - **Changed default port settings to based on FLASK_ENV variable:** Now runs on port 5678 by default if FLASK_ENV var is not set to 'production', but if FLASK_ENV is set to 'production' it will run on 5679.  
 
+## [0.2.3] - 2024-04-05
+
+### Fixed
+
+- **Missing import statement fixed:**
+  - Import os was missing in main.py
+
 
 *Current version of the ChangeLog is powered by OpenAI, ChatGPT-4*
