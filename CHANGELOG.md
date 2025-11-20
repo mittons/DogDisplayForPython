@@ -85,3 +85,5 @@
 
 
 *Current version of the ChangeLog is powered by OpenAI, ChatGPT-4*
+
+*Current version of the ChangeLog is powered by OpenAI, ChatGPT, and more.*
